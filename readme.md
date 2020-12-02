@@ -1,6 +1,6 @@
-# Quitar justificados, guiones y saltos de linea
+# Quitar justificados, guiones y saltos de línea
 
-Herramienta de consola para quitar el formato molesto del texto de algunos PDFs.
+Herramienta de consola para quitar el formato molesto del texto de algunos PDFs. La idea surgió debido a la necesidad de sacar información de distintos PDFs a la hora de hacer trabajos prácticos, y que estos estén en un formato molesto y que acomodarlo en un archivo Word lleve mucho tiempo.
 
 ## Uso
 
@@ -9,7 +9,7 @@ Ejecutar el script:
 $ python main.py
 ```
 
-## Parametros
+## Parámetros
 
 * Input y Output
 
@@ -23,8 +23,15 @@ $ python main.py
     $ python main.py -i {entrada.txt} -o {salida.txt} -j
     ```
 
-* Quitar guiones y saltos de linea
+* Quitar guiones y saltos de línea
 
     ```bash
     $ python main.py -i {entrada.txt} -o {salida.txt} -g
     ```
+
+## Ejemplo
+
+Mirar los archivos:
+
+    > text.txt
+    > output.txt
