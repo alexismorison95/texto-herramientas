@@ -9,7 +9,7 @@ def resolver(input_file: str, output_file: str, justificado: bool, guion: bool):
 
     if justificado:
         result = quitar_justificado(result)
-        print('- Texto justificado!')
+        print('- Texto justificado')
     
     if guion:
         result = quitar_guiones(result)
