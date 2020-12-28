@@ -10,40 +10,26 @@ def parseArgs():
 
     parser = ArgumentParser(description=__doc__)
 
-    parser.add_argument('-f',
-                        '--file',
-                        help='Leer el texto desde un archivo',
-                        type=FileType('r'),
-                        default=stdin)
-
     parser.add_argument('-i',
                         '--input',
-                        help='Leer el texto desde la consola',
-                        type=str,
-                        default=False)
-    
-    parser.add_argument('-s',
-                        '--save',
-                        help='Escribir resultado en un archivo',
-                        type=FileType('w'),
-                        default=stdout)
+                        help='Leer el texto desde un archivo o desde la consola entre comillas dobles. Ej: -i "mi texto", o -i texto.txt',
+                        default=stdin)
     
     parser.add_argument('-o',
                         '--output',
-                        action="store_true",
-                        help='Escribir resultado en la consola',
+                        help='Escribir resultado en un archivo, si no se usa el argumento se mostrará el resultado en la consola. Ej: -o resultado.txt',
                         default=False)
 
     parser.add_argument('-j',
                         '--justificado',
                         action="store_true",
-                        help='Quitar justificado.',
+                        help='Quitar justificado',
                         default=False)
     
     parser.add_argument('-g',
                         '--guion',
                         action="store_true",
-                        help='Quitar guiones y saltos de linea.',
+                        help='Quitar guiones y saltos de linea',
                         default=False)
     
     return parser, parser.parse_args()

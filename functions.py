@@ -2,14 +2,14 @@ import os
 
 
 
-def resolver(input: str, output_file, justificado: bool, guion: bool, is_console):
+def resolver(input, output, justificado: bool, guion: bool):
     
     result = ""
 
-    if is_console:
-        result = input
-    else:
+    try:
         result = read_file(input)
+    except FileNotFoundError:
+        result = input
     
     print()
 
@@ -20,11 +20,12 @@ def resolver(input: str, output_file, justificado: bool, guion: bool, is_console
     if guion:
         result = quitar_guiones(result)
         print('- Texto sin guiones ni salto de lineas')
-
-    if output_file:
-        save_file(output_file, result)
-        print('- Resultado guardado en: {}'.format(output_file))
+    
+    if output:
+        save_file(output, result)
+        print('- Resultado guardado en: {}'.format(output))
     else:
+        print()
         print(result)
 
 
