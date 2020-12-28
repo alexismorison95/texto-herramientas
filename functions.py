@@ -29,7 +29,6 @@ def resolver(input, output, justificado: bool, guion: bool):
         print(result)
 
 
-
 def quitar_justificado(texto: str):
     
     words = texto.split()
@@ -39,7 +38,6 @@ def quitar_justificado(texto: str):
         text += w + ' '
     
     return text
-
 
 
 def quitar_guiones(texto: str):
@@ -52,7 +50,6 @@ def quitar_guiones(texto: str):
         text += aux + ' '
     
     return text
-
 
 
 file_dir = os.path.dirname(os.path.realpath('__file__'))
@@ -69,7 +66,6 @@ def read_file(input_file: str):
             text += l
 
         return text
-
 
 
 def save_file(output_file: str, content: str):

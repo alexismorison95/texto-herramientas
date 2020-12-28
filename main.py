@@ -3,6 +3,7 @@ from functions import resolver
 import sys
 
 
+
 def main():
     parser, args = parseArgs()
 
@@ -13,6 +14,6 @@ def main():
         sys.exit()
 
 
+
 if __name__ == '__main__':
     main()
-

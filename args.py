@@ -2,7 +2,6 @@ from argparse import ArgumentParser
 from argparse import FileType
 
 from sys import stdin
-from sys import stdout
 
 
 
