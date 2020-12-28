@@ -10,18 +10,30 @@ def parseArgs():
 
     parser = ArgumentParser(description=__doc__)
 
-    parser.add_argument('-i',
-                        '--input',
+    parser.add_argument('-f',
+                        '--file',
                         help='Leer el texto desde un archivo',
                         type=FileType('r'),
                         default=stdin)
+
+    parser.add_argument('-i',
+                        '--input',
+                        help='Leer el texto desde la consola',
+                        type=str,
+                        default=False)
     
-    parser.add_argument('-o',
-                        '--output',
-                        help='Escribir resultado en un archivo.',
+    parser.add_argument('-s',
+                        '--save',
+                        help='Escribir resultado en un archivo',
                         type=FileType('w'),
                         default=stdout)
     
+    parser.add_argument('-o',
+                        '--output',
+                        action="store_true",
+                        help='Escribir resultado en la consola',
+                        default=False)
+
     parser.add_argument('-j',
                         '--justificado',
                         action="store_true",

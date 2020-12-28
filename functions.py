@@ -2,9 +2,15 @@ import os
 
 
 
-def resolver(input_file: str, output_file: str, justificado: bool, guion: bool):
+def resolver(input: str, output_file, justificado: bool, guion: bool, is_console):
     
-    result = read_file(input_file)
+    result = ""
+
+    if is_console:
+        result = input
+    else:
+        result = read_file(input)
+    
     print()
 
     if justificado:
@@ -15,8 +21,11 @@ def resolver(input_file: str, output_file: str, justificado: bool, guion: bool):
         result = quitar_guiones(result)
         print('- Texto sin guiones ni salto de lineas')
 
-    save_file(output_file, result)
-    print('- Resultado guardado en: {}'.format(output_file))
+    if output_file:
+        save_file(output_file, result)
+        print('- Resultado guardado en: {}'.format(output_file))
+    else:
+        print(result)
 
 
 

@@ -6,10 +6,17 @@ import sys
 def main():
     parser, args = parseArgs()
 
+    #print(args)
+
     if len(sys.argv) > 1:
-        with args.input:
-            with args.output:
-                resolver(args.input.name, args.output.name, args.justificado, args.guion)
+
+        if args.input:
+            resolver(args.input, None, args.justificado, args.guion, True)
+
+        else:
+            with args.file:
+                with args.save:
+                    resolver(args.file.name, args.save.name, args.justificado, args.guion, False)
     else:
         parser.print_help(sys.stderr)
         sys.exit()
